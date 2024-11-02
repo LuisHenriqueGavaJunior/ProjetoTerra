@@ -1,0 +1,9 @@
+INSERT INTO adubacao (cultura_id, tipo_fertilizante, frequencia, materia_organica) VALUES
+(1, 'NPK 4-14-8 ou similar', 'Aplicar 500 kg/ha na semeadura. Reaplicar durante o florescimento e na formação das vagens, conforme necessário.', 'Incorporar composto ou esterco antes do plantio.'),
+(2, 'NPK 10-20-20 ou similar', 'Aplicar 400 kg/ha na semeadura. Reaplicar durante o crescimento, conforme necessidade.', 'Incorporar composto ou esterco antes do plantio.'),
+(3, 'NPK 10-10-10 ou similar', 'Aplicar 300 kg/ha na época de floração. Reaplicar a cada 6 meses, conforme necessário', 'Incorporar composto ou esterco bem curtido no solo.'),
+(4, 'NPK 10-10-10 ou similar', 'Aplicar 400 kg/ha no início da brotação. Reaplicar a cada 6 meses, conforme necessidade.', 'Incorporar composto ou esterco bem curtido antes do plantio.'),
+(5, 'NPK 10-20-20 ou similar', 'Aplicar 300 a 400 kg/ha na semeadura. Reaplicar após o corte, de acordo com a análise de solo.', 'Incorporar composto ou esterco bem curtido para melhorar a fertilidade.'),
+(6, 'NPK 20-05-20 ou similar', 'Aplicar 400 kg/ha na época de crescimento da pastagem. Reaplicar conforme a necessidade e a análise de solo.', 'Incorporar esterco e composto para aumentar a fertilidade do solo.'),
+(7, 'NPK 10-20-20 ou similar', 'Aplicar 300 a 400 kg/ha antes do plantio. Reaplicar durante o crescimento, conforme necessidade.', 'Incorporar composto ou esterco bem curtido antes do plantio.'),
+(8, 'NPK 20-05-20 ou similar', 'Aplicar 400 kg/ha na época de crescimento da pastagem. Reaplicar conforme necessidade e análise de solo.', ' Incorporar esterco e composto para aumentar a fertilidade do solo.');

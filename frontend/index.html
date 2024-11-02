@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotação de Culturas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+    <div class="blocoPrincipal">
+        <h2 class="tituloSugestoes">Sugestão de Rotação de Culturas</h2>
+        <select id="culturaAnterior">
+            <option value="" disabled selected>Selecione a cultura plantada anteriormente</option>
+        </select>
+        <button class="botaoSugestoes" onclick="buscarSugestoes()">Buscar Sugestões</button>
+        <h2 class="sugestoesTitulo">Culturas recomendadas para o próximo plantio:</h2>
+        <div class="sugestoes" id="sugestoes">
+        </div>
+    </div>    
+
+    <div class="dicasDeManejo">
+        <h2 class="tituloDicas">Dicas de manejo</h2>
+        <div class="cardsDiv">
+            <div class="cards" id="sugestoes">
+                <button class="card" data-cultura-id="1">Feijão  </button>
+                <button class="card" data-cultura-id="2">Arroz </button>
+                <button class="card" data-cultura-id="3">Laranja </button>
+                <button class="card" data-cultura-id="4">Maçã </button>
+            </div>
+            <div class="cards" id="sugestoes">
+                <button class="card" data-cultura-id="5">Cana de açúcar </button>
+                <button class="card" data-cultura-id="6">Vaca</button>
+                <button class="card" data-cultura-id="7">Batata</button>
+                <button class="card" data-cultura-id="8">Ovelha</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Informações carregando...</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

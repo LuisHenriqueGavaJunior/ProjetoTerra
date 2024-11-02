@@ -1,0 +1,65 @@
+Recomendação da próxima cultura:
+
+USE rotacao_culturas;
+SELECT c.nome, cn.nome, cn.motivo 
+FROM culturas c
+INNER JOIN cultura_nova cn 
+ON c.id = cn.cultura_id
+WHERE c.id = ;
+
+
+
+
+
+
+Exibir dicas da cultura:
+
+SELECT 
+    c.id AS cultura_id,
+    c.nome AS cultura_nome,
+    p.nome AS praga_nome,
+    p.periodo_ataque,
+    p.alimentacao,
+    p.atracao,
+    a.tipo_fertilizante,
+    a.frequencia AS adubacao_frequencia,
+    a.materia_organica,
+    ts1.tipo AS solo_tipo_1,
+    ts1.recomendacao AS solo_recomendacao_1,
+    ts2.tipo AS solo_tipo_2,
+    ts2.recomendacao AS solo_recomendacao_2,
+    cl.temperatura,
+    cl.umidade,
+    cl.chuvas
+FROM culturas c
+LEFT JOIN cultura_pragas cp ON c.id = cp.cultura_id
+LEFT JOIN pragas p ON cp.praga_id = p.id
+LEFT JOIN adubacao a ON c.id = a.cultura_id
+LEFT JOIN (
+    SELECT cs.cultura_id, ts.tipo, ts.recomendacao
+    FROM cultura_solo cs
+    JOIN tipo_solo ts ON cs.solo_id = ts.id
+    WHERE cs.solo_id = (
+        SELECT MIN(solo_id) 
+        FROM cultura_solo 
+        WHERE cultura_id = cs.cultura_id
+    )
+) AS ts1 ON c.id = ts1.cultura_id
+LEFT JOIN (
+    SELECT cs.cultura_id, ts.tipo, ts.recomendacao
+    FROM cultura_solo cs
+    JOIN tipo_solo ts ON cs.solo_id = ts.id
+    WHERE cs.solo_id = (
+        SELECT MAX(solo_id) 
+        FROM cultura_solo 
+        WHERE cultura_id = cs.cultura_id
+    )
+    AND cs.solo_id != (
+        SELECT MIN(solo_id) 
+        FROM cultura_solo 
+        WHERE cultura_id = cs.cultura_id
+    )
+) AS ts2 ON c.id = ts2.cultura_id
+LEFT JOIN clima cl ON c.id = cl.cultura_id
+WHERE 
+    c.id = ; 
